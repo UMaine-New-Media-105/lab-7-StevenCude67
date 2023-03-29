@@ -1,0 +1,33 @@
+let moveSquare = 40
+let x = 400
+let y = -40
+let randomColor = ["red", "orange","yellow", "green", "blue", "indigo", "violet"]
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  noLoop();
+  background(220);
+  
+  for (let s = 0; s < 10; s++){
+    let myColor = random(randomColor)
+    basicSquare(s * moveSquare, s * moveSquare, 1, myColor);
+  }
+  
+  for (let q = 0; q < 10; q++){
+    let myColor = random(randomColor)
+    basicSquare(x -= 40 , y += 40, 1, myColor)
+  }
+  
+}
+
+function basicSquare(x, y, size, color){
+  push();
+  translate(x, y)
+  scale(size);
+  fill(color);
+  rect(0, 0, 40);
+  pop();
+}
