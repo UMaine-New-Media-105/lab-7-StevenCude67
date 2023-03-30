@@ -1,0 +1,23 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  noLoop();
+
+  for (let i = 0; i < 5; i++) {
+    fill(120 * i + 120, 40 * i + 40, 100 * i + 80);
+    for (let j = 0; j < 5; j++) {
+      drawSquare(80 * i, 80 * j, 1);
+    }
+  }
+}
+
+function drawSquare(x, y, size) {
+  push();
+  translate(x, y);
+  scale(size);
+  rect(0, 0, 80);
+  pop();
+}
